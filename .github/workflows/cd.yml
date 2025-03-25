@@ -31,8 +31,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          path: front-end  # Baixa o repositório em "front-end/"
       
       - name: Entrar no diretório do front-end
         run: cd front-end  # Navega para o diretório
@@ -43,8 +41,10 @@ jobs:
           node-version: "20"
       - name: Install dependencies
         run: npm install
+        working-directory: front-end  # Define o diretório de trabalho
       - name: Build the project
         run: npm run build
+        working-directory: front-end  # Define o diretório de trabalho
       - name: Deploy to Vercel
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}

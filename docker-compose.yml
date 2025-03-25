@@ -1,0 +1,13 @@
+services:
+  frontend:
+    image: myfrontend
+    build: .
+    container_name: myfrontend
+    ports:
+      - 80:80
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    external: true

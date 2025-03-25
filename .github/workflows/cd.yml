@@ -29,6 +29,9 @@ jobs:
   CD-DeployToVercel:
     runs-on: ubuntu-latest
     steps:
+      - name: Entrar no diretório do front-end
+        run: cd front-end  # Navega para o diretório
+      
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:

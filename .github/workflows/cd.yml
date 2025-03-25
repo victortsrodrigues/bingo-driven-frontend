@@ -29,22 +29,14 @@ jobs:
   CD-DeployToVercel:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      
-      - name: Entrar no diretório do front-end
-        run: cd front-end  # Navega para o diretório
-      
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "20"
       - name: Install dependencies
         run: npm install
-        working-directory: front-end  # Define o diretório de trabalho
       - name: Build the project
         run: npm run build
-        working-directory: front-end  # Define o diretório de trabalho
       - name: Deploy to Vercel
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}

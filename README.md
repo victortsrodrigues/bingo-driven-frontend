@@ -1,8 +1,25 @@
-# React + Vite
+# Bingo Driven - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Link deploy:
+https://bingo-driven-frontend-kappa.vercel.app/
 
-Currently, two official plugins are available:
+## Link repositório:
+https://github.com/victortsrodrigues/bingo-driven-frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Execução com Docker:
+
+### 1. Construa a imagem do container frontend:
+Execute no terminal: docker build -t myfrontend .
+
+### 5. Execute o container backend:
+Execute no terminal:
+  docker run -d \
+  --name NOMECONTAINER \
+  -p 80:80 \
+  --network=NOMENETWORK \
+  myfrontend
+
+## Execução com Docker Compose:
+
+### 1. Execute o comando docker-compose up -d para iniciar o container:
+Execute no terminal: docker compose up -d
